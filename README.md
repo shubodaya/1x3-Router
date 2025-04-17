@@ -1,3 +1,4 @@
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 # RTL Design and Implementation of 1x3 Router
 
 This project represents the **RTL Design and Implementation of a 1x3 Router**, which I completed during my time as a **Graduate Trainee** at **Maven Silicon** in **2021**. The design involves creating a basic **Router 1x3** (Single Ingress, 3 Egress Ports) that accepts data packets on a single 8-bit port and routes them to one of three output ports.
