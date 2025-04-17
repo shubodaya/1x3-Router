@@ -1,26 +1,65 @@
 # RTL Design and Implementation of 1x3 Router
 
-This RTL Design of the Project was completed in 2017 and verification testbench was added later in 2019.
-It contains RTL Implementation of a basic Router1x3 (Single Ingress, 3 Egress Ports).
-It is designed accepts data packets on a single 8-bit port and routes them to one of the three output ports.
+This project represents the **RTL Design and Implementation of a 1x3 Router**, which I completed during my time as a **Graduate Trainee** at **Maven Silicon** in **2021**. The design involves creating a basic **Router 1x3** (Single Ingress, 3 Egress Ports) that accepts data packets on a single 8-bit port and routes them to one of three output ports.
 
-**Router 1x3 Block Diagram:**
-![Alt text](./router.png?raw=true)
+The project initially involved creating the RTL design, and later I added a **verification testbench** to ensure the correctness of the implementation. The final design was verified, synthesized, and implemented on an **FPGA** platform.
 
-**Functionality:**
-1. Input Register:
-    This block is responsible for extracting the header, calculating and checking the
-    parity.
-2. Synchronizer:
-    This block is responsible for decoding the header and determining the output portIt also provides synchronization between FSM and FIFO Modules. It allows faithful communication between the input port and the output port.
-3. FSM:
-    This block is basically a controller for the router. It generates necessary controls for FIFO, Synchroniser based on the values of status signals.
-4. FIFO:
-    This is an synchronous active low reset FIFO which allows simultaneous read and write operations.
+---
 
-Steps covered during the project:
-  1. Designed a the block level structure for the Router.
-  2. Implemented the RTL Design using Verilog HDL and verified using individual verilog testbenches.
-  3. Synthesized and Implemented the design to generate a bit file and tested on FPGA.
-  4. Developed the class based verification environment and verified the 1x3 Router RTL model in system verilog using UVM Methodology.
-  5. Generated functional and code coverage for the RTL verification sign-off.
+## Router 1x3 Block Diagram:
+![Router 1x3 Block Diagram](./router.png?raw=true)
+
+---
+
+## Functionality:
+
+1. **Input Register:**
+   - This block is responsible for extracting the header, calculating, and checking the parity of incoming packets.
+   
+2. **Synchronizer:**
+   - The synchronizer decodes the header and determines which output port the data should be sent to. It ensures proper synchronization between the **FSM** and **FIFO** modules, facilitating accurate data communication between the input and output ports.
+   
+3. **FSM (Finite State Machine):**
+   - The FSM is the core controller of the router. It generates the necessary control signals for **FIFO** and **Synchronizer** based on status signals.
+   
+4. **FIFO (First In First Out):**
+   - A synchronous, active-low reset FIFO allows simultaneous read and write operations, providing efficient data storage and transfer between blocks.
+
+---
+
+## Steps Covered During the Project:
+
+1. **Block-level Structure Design:**
+   - Designed the block-level structure for the router, identifying key components such as the **Input Register**, **Synchronizer**, **FSM**, and **FIFO**.
+
+2. **RTL Implementation:**
+   - Implemented the router's functionality using **Verilog HDL** and verified the design through individual **Verilog testbenches**.
+
+3. **FPGA Implementation:**
+   - Synthesized and implemented the design to generate a bit file and tested the router on an FPGA platform.
+
+4. **Verification Environment Development:**
+   - Developed a class-based verification environment and verified the **1x3 Router RTL model** in **SystemVerilog** using **UVM** (Universal Verification Methodology).
+
+5. **Coverage Generation:**
+   - Generated functional and code coverage reports for the RTL verification sign-off, ensuring all aspects of the design were thoroughly tested and validated.
+
+---
+
+## Technologies Used:
+
+- **Verilog HDL**: For the RTL design and implementation of the router.
+- **SystemVerilog**: For creating the verification environment.
+- **UVM**: To apply the Universal Verification Methodology for systematic verification.
+- **FPGA**: For synthesizing and testing the design.
+- **Verilog Testbenches**: Used to verify individual components and ensure correctness.
+- **Git**: For version control during project development.
+
+---
+
+## Acknowledgments:
+
+- **Maven Silicon**: For providing the opportunity and support during the internship.
+- **FPGA Development Tools**: For synthesizing and testing the design.
+- **SystemVerilog & UVM**: For advanced verification methodologies.
+
